@@ -110,4 +110,5 @@ else :
 # This is an Educational Model
 
 pkl.dump(model, open("Heart_model.pkl", "wb"))
+pkl.dump(scalar,open("scaler.pkl","wb"))
 print("Model Saved")
