@@ -27,7 +27,7 @@ e = st.selectbox("Do you have Exercise Angina ? ",["Yes","No"])
 p = st.selectbox("Chest pain Type: ",["Atypical Angina","Typical Angina","Asymptomatic","Non-Anginal Pain"])
 
 #Feature Alignment
-user_df = pd.dataframe(0,index=[0],columns=feature_names)
+user_df = pd.DataFrame(0,index=[0],columns=feature_names)
 
 user_df['Age'] = age 
 user_df['Cholestero'] = chol
