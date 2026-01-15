@@ -39,7 +39,7 @@ user_df['Stress Level'] = stress_level
 user_df['Gender'] = 1 if gender == "Male" else 0 
 user_df['Diabetes'] = 1 if diabetes == "Yes" else 0
 user_df['Obesity'] = 1 if obesity == "Yes" else 0 
-user_df['Family History'] = 1 of family_history == "Yes" else 0
+user_df['Family History'] = 1 if family_history == "Yes" else 0
 user_df['Exercise Induced Angina'] = 1 if exercise_angina == "Yes" else 0
 
 if smoking == "Yes" and "Smoking_Yes" in user_df.columns:
