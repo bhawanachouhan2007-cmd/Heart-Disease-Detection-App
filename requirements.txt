@@ -1,3 +1,4 @@
 Streamlit
-Pickle
+scikit-learn
 Numpy
+pandas
