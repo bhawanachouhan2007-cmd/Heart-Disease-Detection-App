@@ -24,7 +24,7 @@ e = st.text_input("Do you have Exercise Angina ? ")
 p = st.text_input("Chest pain Type (Atypical Angina/ Typical Angina / Asymptomatic / Non-Anginal Pain): ")
 
 if st.button("Predict"):
-    data = np.array([age , gen ,chol,bp,smoke,hr,ai,di,ob,ex,sl,fh,e,p])
+    data = np.array([[age , gen ,chol,bp,smoke,hr,ai,di,ob,ex,sl,fh,e,p]])
     result = model.predict(data)
     if result[0] == 1:
         st.error("⚠️ Heart Disease Detected")
