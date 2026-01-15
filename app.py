@@ -30,30 +30,30 @@ p = st.selectbox("Chest pain Type: ",["Atypical Angina","Typical Angina","Asympt
 user_df = pd.DataFrame(0,index=[0],columns=feature_names)
 
 user_df['Age'] = age 
-user_df['Cholestero'] = chol
+user_df['Cholesterol'] = chol
 user_df['Blood Pressure'] = bp
-user_df['Heart Rate'] = heart_rate
-user_df['Exercise Hours'] = exercise_hour
-user_df['Stress Level'] = stress_level
-user_df['Gender'] = 1 if gender == "Male" else 0 
-user_df['Diabetes'] = 1 if diabetes == "Yes" else 0
-user_df['Obesity'] = 1 if obesity == "Yes" else 0 
-user_df['Family History'] = 1 if family_history == "Yes" else 0
-user_df['Exercise Induced Angina'] = 1 if exercise_angina == "Yes" else 0
+user_df['Heart Rate'] = hr
+user_df['Exercise Hours'] = ex
+user_df['Stress Level'] = sl
+user_df['Gender'] = 1 if gen == "Male" else 0 
+user_df['Diabetes'] = 1 if di == "Yes" else 0
+user_df['Obesity'] = 1 if ob == "Yes" else 0 
+user_df['Family History'] = 1 if fh == "Yes" else 0
+user_df['Exercise Induced Angina'] = 1 if e == "Yes" else 0
 
-if smoking == "Yes" and "Smoking_Yes" in user_df.columns:
+if smoke == "Yes" and "Smoking_Yes" in user_df.columns:
     user_df["Smoking_Yes"] = 1
 
-if alcohol == "Heavy" and "Alcohol Intake_Heavy" in user_df.columns:
+if ai == "Heavy" and "Alcohol Intake_Heavy" in user_df.columns:
     user_df["Alcohol Intake_Heavy"] = 1
-elif alcohol == "Moderate" and "Alcohol Intake_Moderate" in user_df.columns:
+elif ai == "Moderate" and "Alcohol Intake_Moderate" in user_df.columns:
     user_df["Alcohol Intake_Moderate"] = 1
 
-if chest_pain == "Atypical Angina" and "Chest Pain Type_Atypical Angina" in user_df.columns:
+if p == "Atypical Angina" and "Chest Pain Type_Atypical Angina" in user_df.columns:
     user_df["Chest Pain Type_Atypical Angina"] = 1
-elif chest_pain == "Non-anginal Pain" and "Chest Pain Type_Non-anginal Pain" in user_df.columns:
+elif p == "Non-anginal Pain" and "Chest Pain Type_Non-anginal Pain" in user_df.columns:
     user_df["Chest Pain Type_Non-anginal Pain"] = 1
-elif chest_pain == "Asymptomatic" and "Chest Pain Type_Asymptomatic" in user_df.columns:
+elif p == "Asymptomatic" and "Chest Pain Type_Asymptomatic" in user_df.columns:
     user_df["Chest Pain Type_Asymptomatic"] = 1
 
 
@@ -68,9 +68,9 @@ if st.button("Predict"):
     else :
         st.success("❤ No Heart Disease Detected")
 
-    if probability[0] > 0.7:
+    if probability > 0.7:
         st.error('High Risk')
-    elif probability[0] > 0.4:
+    elif probability > 0.4:
         st.warning('Medium Risk')
     else:
         st.success('Low Risk')
