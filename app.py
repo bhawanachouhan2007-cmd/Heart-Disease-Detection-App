@@ -7,7 +7,7 @@ model_path = os.path.join(os.path.dirname(__file__),"Heart_model.pkl")
 scaler_path = os.path.join(os.path.dirname(__file__),"scaler.pkl")
 model = pickle.load(open(model_path, "rb"))
 scaler = pickle.load(open(scaler_path,"rb"))
-
+feature_names = model.feature_names_in_
 st.title(' ❤️ Heart Disease Prediction App')
 st.write("-----Enter Patient Details------ ")
 
