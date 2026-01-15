@@ -4,8 +4,9 @@ import streamlit as st
 import numpy as  np
 
 model_path = os.path.join(os.path.dirname(__file__),"Heart_model.pkl")
+scalar_path = os.path.join(os.path.dirname(__file__),"scalar.pkl")
 model = pickle.load(open(model_path, "rb"))
-
+scalar = pickle.load(open(scalar_path,"rb"))
 st.title(' ❤️ Heart Disease Prediction App')
 
 age = st.number_input("Enter Age: " , 1 ,100)
