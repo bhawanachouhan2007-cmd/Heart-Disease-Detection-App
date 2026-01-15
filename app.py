@@ -7,7 +7,7 @@ model_path = os.path.join(os.path.dirname(__file__),"Heart_model.pkl")
 scaler_path = os.path.join(os.path.dirname(__file__),"scaler.pkl")
 model = pickle.load(open(model_path, "rb"))
 scaler = pickle.load(open(scaler_path,"rb"))
-feature_names = model.feature_names_in_
+feature_names = pickle.load(open("feature_names.pkl","rb"))
 st.title(' ❤️ Heart Disease Prediction App')
 st.write("-----Enter Patient Details------ ")
 
@@ -27,7 +27,6 @@ e = st.selectbox("Do you have Exercise Angina ? ",["Yes","No"])
 p = st.selectbox("Chest pain Type: ",["Atypical Angina","Typical Angina","Asymptomatic","Non-Anginal Pain"])
 
 #Feature Alignment
-feature_names = scaler.feature_names_in_
 user_df = pd.dataframe(0,index=[0],columns=feature_names)
 
 user_df['Age'] = age 
