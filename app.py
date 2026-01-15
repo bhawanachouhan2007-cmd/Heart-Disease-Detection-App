@@ -1,8 +1,10 @@
+import os 
 import pickle
 import streamlit as st
 import numpy as  np
 
-model = pickle.load(open('Heart_model.pkl', "rb"))
+model_path = os.path.join(os.path.dirname(__file__),"Heart_model.pkl")
+model = pickle.load(open(model_path, "rb"))
 
 st.title(' ❤️ Heart Disease Prediction App')
 
