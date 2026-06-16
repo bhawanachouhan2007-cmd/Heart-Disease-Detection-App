@@ -1,2 +1,2 @@
 # Heart-Disease-Detection-App
-A app that Detect Heart Disease from User Inputs.
+An app that Detect Heart Disease from User Inputs.
